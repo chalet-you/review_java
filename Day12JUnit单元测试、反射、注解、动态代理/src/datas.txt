@@ -1,0 +1,13 @@
+=========Student===========
+address = 光明顶
+name = 赵敏
+id = 1
+age = 26
+sex = 女
+tel = 110
+=========Pig===========
+name = 佩奇
+onwer = 小红
+color = 粉色
+weight = 500.0
+sex = 母猪

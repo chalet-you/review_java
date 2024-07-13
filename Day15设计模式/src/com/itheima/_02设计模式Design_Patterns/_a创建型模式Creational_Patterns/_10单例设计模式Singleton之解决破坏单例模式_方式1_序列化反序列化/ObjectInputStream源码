@@ -1,0 +1,38 @@
+public final Object readObject() throws IOException, ClassNotFoundException{
+    ...
+    // if nested read, passHandle contains handle of enclosing object
+    int outerHandle = passHandle;
+    try {
+        Object obj = readObject0(false);//重点查看readObject0方法
+    .....
+}
+
+private Object readObject0(boolean unshared) throws IOException {
+	...
+    try {
+		switch (tc) {
+			...
+			case TC_OBJECT:
+				return checkResolve(readOrdinaryObject(unshared));//重点查看readOrdinaryObject方法
+			...
+        }
+    } finally {
+        depth--;
+        bin.setBlockDataMode(oldMode);
+    }
+}
+
+private Object readOrdinaryObject(boolean unshared) throws IOException {
+	...
+	//isInstantiable 返回true，执行 desc.newInstance()，通过反射创建新的单例类，
+    obj = desc.isInstantiable() ? desc.newInstance() : null;
+    ...
+    // 在Singleton类中添加 readResolve 方法后 desc.hasReadResolveMethod() 方法执行结果为true
+    if (obj != null && handles.lookupException(passHandle) == null && desc.hasReadResolveMethod()) {
+    	// 通过反射调用 Singleton 类中的 readResolve 方法，将返回值赋值给rep变量
+    	// 这样多次调用ObjectInputStream类中的readObject方法，继而就会调用我们定义的readResolve方法，所以返回的是同一个对象。
+    	Object rep = desc.invokeReadResolve(obj);
+     	...
+    }
+    return obj;
+}

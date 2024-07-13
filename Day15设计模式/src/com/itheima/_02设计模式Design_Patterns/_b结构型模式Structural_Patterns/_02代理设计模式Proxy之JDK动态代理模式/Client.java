@@ -1,0 +1,25 @@
+package com.itheima._02设计模式Design_Patterns._b结构型模式Structural_Patterns._02代理设计模式Proxy之JDK动态代理模式;
+
+/**
+ * @version v1.0
+ * @ClassName: Client
+ * @Description: TODO(一句话描述该类的功能)
+ * @Author: 黑马程序员
+ */
+public class Client {
+    public static void main(String[] args) {
+        //获取代理对象
+        //1,创建代理工厂对象
+        ProxyFactory factory = new ProxyFactory();
+        //2,使用factory对象的方法获取代理对象
+        SellTickets proxyObject = factory.getProxyObject();
+        //3,调用卖调用的方法
+        proxyObject.sell();
+
+        System.out.println(proxyObject.getClass());
+
+        //让程序一直执行
+        while(true) {}
+
+    }
+}

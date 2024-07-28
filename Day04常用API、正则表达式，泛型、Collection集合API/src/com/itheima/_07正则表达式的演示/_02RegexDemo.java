@@ -73,6 +73,46 @@ package com.itheima._07正则表达式的演示;
         a((?!)b)c                  表示只有b不区分大小写
         Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE)
 
+    贪婪匹配和惰性匹配
+        .*                         贪婪匹配
+        .*?                        惰性匹配
+
+        举例1：
+               str：玩儿吃鸡游戏，晚上一起上游戏，干嘛呢？打游戏啊
+               reg：玩儿.*?游戏
+               此时匹配的是：共找打 1 处匹配
+                            玩儿吃鸡游戏
+
+        举例2：
+               str：玩儿吃鸡游戏，晚上一起上游戏，干嘛呢？打游戏啊
+               reg：玩儿.*游戏
+               此时匹配的是：共找打 1 处匹配
+                            玩儿吃鸡游戏，晚上一起上游戏，干嘛呢？打游戏
+        举例3：
+               str：abxmnpxhijkxcx
+               reg：.*?x
+               此时匹配的是：共找到 4 处匹配：
+                            abx
+                            mnpx
+                            hijkx
+                            cx
+        举例4：
+               str：<div>胡辣汤</div>
+               reg：<.*>
+               此时匹配的是：共找到 1 处匹配
+                            <div>胡辣汤</div>
+        举例5：
+               str：<div>胡辣汤</div>
+               reg：<.*?>
+               此时匹配的是：共找到 2 处匹配
+                            <div>
+                            </div>
+        举例6：
+               str：<div>胡辣汤</div><span>饭团</span>
+               reg：<div>.*?</div>
+               此时匹配的是：共找到 1 处匹配
+                            <div>胡辣汤</div>
+
 
  */
 public class _02RegexDemo {

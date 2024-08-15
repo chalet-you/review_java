@@ -90,7 +90,7 @@ package com.itheima._07正则表达式的演示;
                             玩儿吃鸡游戏，晚上一起上游戏，干嘛呢？打游戏
         举例3：
                str：abxmnpxhijkxcx
-               reg：.*?x
+               reg：.*?x                                  # 表示到第一个x就停止匹配。
                此时匹配的是：共找到 4 处匹配：
                             abx
                             mnpx
@@ -112,6 +112,12 @@ package com.itheima._07正则表达式的演示;
                reg：<div>.*?</div>
                此时匹配的是：共找到 1 处匹配
                             <div>胡辣汤</div>
+        举例7
+               str：<div class="jay">周杰伦</div><div class="jj">林俊杰</div>
+               reg：<div class=".*?">.*?</div>
+               此时匹配的是：共找到 2 处匹配
+                            <div class="jay">周杰伦</div>
+                            <div class="jj">林俊杰</div>
 
 
  */

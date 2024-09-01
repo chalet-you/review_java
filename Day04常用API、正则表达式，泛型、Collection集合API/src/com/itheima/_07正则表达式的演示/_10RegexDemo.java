@@ -4,9 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 目标：正则的分组
- * <p>
- * 输入11位手机号，把中间手机4位数字加密，密文如：138****5830
+    目标：正则的分组
+
+    输入11位手机号，把中间手机4位数字加密，密文如：138****5830
  */
 public class _10RegexDemo {
     public static void main(String[] args) {

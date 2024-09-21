@@ -31,7 +31,7 @@ public class CollectionDemo03 {
             System.out.println(s);
         });
 //      lists.forEach(s ->  System.out.println(s));
-//      lists.forEach(System.out::println);           《最终简化写法》
+      lists.forEach(System.out::println);           // 《最终简化写法》
 
 
     }

@@ -43,7 +43,7 @@ public class BigDecimalDemo {
         BigDecimal a1 = BigDecimal.valueOf(a);
         BigDecimal b1 = BigDecimal.valueOf(b);
         //BigDecimal c1 = a1.add(b1);  // 加法
-        BigDecimal c1 = a1.divide(b1); // 除法
+        BigDecimal c1 = a1.divide(b1); // 除法   如果是 0.1/0.3本身就是非精确的运算，所以不能用大数据类型做精确的除法
         System.out.println(c1);
 
         // 结果可能需要继续使用!!!

@@ -19,7 +19,7 @@ import java.util.Set;
          如果希望增删改查都很快，但是元素不重复以及无序无索引，那么用HashSet集合。
          如果希望增删改查都很快且有序，但是元素不重复以及无索引，那么用LinkedHashSet集合。
 */
-public class HashSetDemo04 {
+public class LinkedHashSetDemo04 {
     public static void main(String[] args) {
         // 有序不重复无索引
         Set<String> sets = new LinkedHashSet<>();

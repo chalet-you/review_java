@@ -49,8 +49,8 @@ package com.itheima._07正则表达式的演示;
 
     Greedy 数量词
          X?       X，一次或 0 次
-         X*       X，零次或多次
-         X+       X，一次或多次
+         X*       X，零次或多次（ >=0 ）
+         X+       X，一次或多次（ >=1 ）
          X{n}     X，恰好 n 次
          X{n,}    X，至少 n 次
          X{n,m}   X，至少 n 次，但是不超过 m 次

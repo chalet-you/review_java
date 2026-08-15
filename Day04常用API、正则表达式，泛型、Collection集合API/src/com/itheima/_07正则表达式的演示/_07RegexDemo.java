@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
               中的 "Windows"，但不匹配 "Windows 3.1" 中的 "Windows"
 
           3、(?!regex)
-                表示：该表达式匹配不处于匹配 regex 的字符串的起始点的搜索字符串。它是
+                表示：该表达式匹配 不处于匹配 regex 的字符串的起始点的搜索字符串。它是
                 一个非捕获匹配。例如，'Windows (?!95|98|NT|2000)' 匹配的是
                 "Windows 3.1" 中的 "Windows"，但不匹配 "Windows 2000" 中的 "Windows"
 
@@ -44,7 +44,7 @@ public class _07RegexDemo {
         // 找到 韩顺平教育 、韩顺平老师、韩顺平同学 子字符串
 
         //String regex = "韩顺平教育|韩顺平老师|韩顺平同学";   等价于：String regex = "韩顺平(?:教育|老师|同学)";
-        //上面的写法可以等价非捕获分组, 注意：不能 matcher.group(1)
+        //上面的写法可以等价非捕获分组, 注意：不能 matcher.group(1)，因为非捕获匹配是不存储的
         //String regex = "韩顺平(?:教育|老师|同学)";
 
 
